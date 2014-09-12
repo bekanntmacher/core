@@ -190,6 +190,13 @@ class Form extends \Hybrid
 
 					if ($objWidget->hasErrors())
 					{
+						// Add class
++ 						global $objPage;
++ 						if(strpos($objPage->cssClass,'error') === false)
++ 						{
++ 							$objPage->cssClass = $objPage->cssClass . ' form_error' . ' form_error_' . $formId;
++ 						}
++ 
 						$doNotSubmit = true;
 					}
 
